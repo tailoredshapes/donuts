@@ -1,0 +1,36 @@
+{:objects
+ {:link          {:fields {:index {:type (non-null String)}
+                           :name  {:type (non-null String)}
+                           :url   {:type (non-null :url)}}}
+
+  :options       {:fields {:choose {:type (non-null Integer)}
+                           :type   {:type (non-null String)}
+                           :from   {:type (list :link)}}}
+  :ability_bonus {:fields {:ability_score {:type :link}
+                           :bonus {:type Integer}}}
+  :races         {:fields  {:index                  {:type (non-null String)}
+                            :name                   {:type (non-null String)}
+                            :speed                  {:type (non-null Int)}
+                            :ability_bonus          {:type :ability_bonus
+                                                     :resolve :link}
+                            :alignment              {:type (non-null String)}
+                            :age                    {:type (non-null String)}
+                            :size                   {:type (non-null String)}
+                            :size_description       {:type (non-null String)}
+                            :starting_proficiencies {:type (list :link)
+                                                     :resolve :link}
+                            :starting_options       {:type (list :link)
+                                                     :resolve :link}
+                            :languages              {:type (list :link)
+                                                     :resolve :link}
+                            :language_desc          {:type String}
+                            :traits                 {:type (list :link)
+                                                     :resolve :link}
+                            :subraces               {:type (list :link)
+                                                     :resolve :link}}
+
+                  :queries {:type        :Races
+                            :description ""
+                            :args        {:index   {:type String}
+                                          :resolve :query/by-index}}}
+  }
