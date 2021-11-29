@@ -12,3 +12,5 @@
         expected {:data {:by_index {:name "Dwarf", :speed 25, :size "Medium"}}}]
     (is (= expected (u/q schema query)))))
 
+
+

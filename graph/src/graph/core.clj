@@ -3,16 +3,8 @@
     [clojure.java.io :as io]
     [com.walmartlabs.lacinia.util :as util]
     [com.walmartlabs.lacinia.schema :as schema]
-    [clojure.edn :as edn]
-    [clojure.data.json :as json]
-    [outpace.config :refer [defconfig]]))
+    [clojure.edn :as edn]))
 
-(defconfig schema-file "resources/schema.edn")
-(defconfig data-file "../data/src/5e-SRD-Races.json")
-
-(def data (-> (io/file data-file)
-              slurp
-              (json/read-str :key-fn keyword)))
 
 (defn resolver-map
   [d]
