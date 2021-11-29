@@ -15,17 +15,17 @@
               (json/read-str :key-fn keyword)))
 
 (defn resolver-map
-  []
-  {:query/by-index (fn [context args value]
-                       {:index 1})
-   :link (fn [context args value] "Found link")})
+  [d]
+  {:query/by-index (fn [_ {i :index} _]
+                     (first (filter #(= (:index %) i) d)))
+   :link           (fn [context args value] "Found link")})
 
 (defn load-schema
-  []
-  (-> (io/file schema-file)
+  [f rm]
+  (-> (io/file f)
       slurp
       edn/read-string
-      (util/attach-resolvers (resolver-map))
+      (util/attach-resolvers rm)
       schema/compile))
 
 
