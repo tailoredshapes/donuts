@@ -9,7 +9,8 @@
                  [com.outpace/config "0.13.5"]
                  [compojure "1.6.2"]
                  [ring "1.8.1"]
-                 [ring/ring-jetty-adapter "1.8.1"]]
+                 [ring/ring-jetty-adapter "1.8.1"]
+                 [org.clojure/tools.logging "1.1.0"]]
 
   :aot [graph.server]
   :main graph.server

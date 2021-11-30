@@ -18,7 +18,7 @@
 
 (defonce server nil)
 
-(defconfig schema-file "resources/schema.edn")
+(defconfig schema-file "../schema/schema.edn")
 (defconfig data-file "../data/src/5e-SRD-Races.json")
 (defconfig port 7070)
 
