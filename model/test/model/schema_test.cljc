@@ -13,6 +13,10 @@
                slurp
                (json/read-str :key-fn keyword)))
 
+(def traits (-> (io/file "../data/src/5e-SRD-Traits.json")
+                   slurp
+                   (json/read-str :key-fn keyword)))
+
 (deftest can-parse-a-race
   (let [dwarf (first races)]
     (is (m/validate Role dwarf))))
@@ -23,3 +27,6 @@
 
 (deftest can-parse-all-languages
   (is (empty? (filter false? (map (partial m/validate Language) languages)))))
+
+(deftest can-parse-all-languages
+  (is (empty? (filter false? (map (partial m/validate Trait) traits)))))

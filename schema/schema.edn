@@ -5,14 +5,15 @@
 
   :options       {:fields {:choose {:type (non-null Int)}
                            :type   {:type (non-null String)}
-                           :from   {:type (list :link)}}}
-  :ability_bonus {:fields {:ability_score {:type :link}
+                           :from   {:type (list :link)
+                                    :resolve :link}}}
+  :ability_bonus {:fields {:ability_score {:type :link
+                                           :resolve :link}
                            :bonus         {:type Int}}}
-  :race         {:fields {:index                  {:type (non-null String)}
+  :race          {:fields {:index                  {:type (non-null String)}
                            :name                   {:type (non-null String)}
                            :speed                  {:type (non-null Int)}
-                           :ability_bonus          {:type    :ability_bonus
-                                                    :resolve :link}
+                           :ability_bonuses        {:type    (list :ability_bonus)}
                            :alignment              {:type (non-null String)}
                            :age                    {:type (non-null String)}
                            :size                   {:type (non-null String)}
@@ -33,5 +34,5 @@
  {:by_index
   {:type        :race
    :description ""
-   :args        {:index   {:type String}}
-   :resolve :query/by-index}}}
+   :args        {:index {:type String}}
+   :resolve     :query/by-index}}}

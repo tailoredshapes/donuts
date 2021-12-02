@@ -44,4 +44,14 @@
    [:typical_speakers [:sequential :string]]
    [:url :string]])
 
+(def Trait
+  [:map
+   [:index :string]
+   [:races [:sequential Link]]
+   [:subraces [:sequential Link]]
+   [:name :string]
+   [:desc [:sequential :string]]
+   [:proficiencies [:sequential Link]]
+   [:url :string]])
+
 
