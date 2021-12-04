@@ -1,0 +1,1 @@
+{:type "object", :properties {:index {:type "string"}, :name {:type "string"}, :equipment_category {:type "object", :properties {:index {:type "string"}, :name {:type "string"}, :url {:type "string"}}, :required [:index :name :url]}, :desc {:type "array", :items {:type "string"}}, :url {:type "string"}}, :required [:index :name :equipment_category :desc :url]}

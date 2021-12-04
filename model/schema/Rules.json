@@ -1,0 +1,1 @@
+{:type "object", :properties {:name {:type "string"}, :index {:type "string"}, :desc {:type "string"}, :subsections {:type "array", :items {:type "object", :properties {:name {:type "string"}, :index {:type "string"}, :url {:type "string"}}, :required [:name :index :url]}}, :url {:type "string"}}, :required [:name :index :desc :subsections :url]}

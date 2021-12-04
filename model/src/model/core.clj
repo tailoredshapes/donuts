@@ -18,5 +18,4 @@
                     json-files)))
 
 (def schema (reduce-kv (fn [m k v] (assoc m k (mp/provide v)))
-                       {} j
-                       ))
+                       {} j))

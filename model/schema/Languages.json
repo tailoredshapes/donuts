@@ -1,0 +1,1 @@
+{:type "object", :properties {:index {:type "string"}, :name {:type "string"}, :type {:type "string"}, :typical_speakers {:type "array", :items {:type "string"}}, :script {:type "array"}, :url {:type "string"}, :desc {:type "string"}}, :required [:index :name :type :typical_speakers :script :url]}
